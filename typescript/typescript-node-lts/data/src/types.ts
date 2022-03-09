@@ -1,14 +1,7 @@
-
-export type InngestEvent = {
-  name: string;
-  data: { [key: string]: any },
-  user?: { [key: string]: any },
-  v?: string
-  ts: number
-};
+{{ EventTypes "typescript" }}
 
 export type Args = {
-  event: InngestEvent;
+  event: EventTriggers;
   actions: {
     [clientID: string]: any
   };
