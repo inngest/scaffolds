@@ -1,0 +1,15 @@
+{
+  "name": "{{ .Name }}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/_init.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^17.0.21",
+    "ts-node": "^10.7.0"
+  }
+}

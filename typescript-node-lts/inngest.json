@@ -1,0 +1,9 @@
+{
+  "name": "{{ .Name }}",
+  "id": "clear-amoeba-53c1eb",
+  "triggers": [
+    {
+      "event": "{{ .Event }}"
+    }
+  ]
+}
