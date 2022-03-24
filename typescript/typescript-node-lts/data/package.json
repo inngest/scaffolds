@@ -2,14 +2,17 @@
   "name": "{{ .QuotedName }}",
   "version": "1.0.0",
   "description": "A serverless function triggered via events",
-  "main": "src/_init.ts",
+  "main": "build/_init.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@types/node": "^17.0.21",
-    "ts-node": "^10.7.0"
+  "devDependencies": {
+    "@types/jest": "27.4.1",
+    "@types/node": "17.0.21",
+    "jest": "27.5.1",
+    "ts-node": "10.7.0"
   }
 }
