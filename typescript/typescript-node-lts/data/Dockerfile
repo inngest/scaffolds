@@ -11,9 +11,8 @@ RUN npm run build
 FROM node:16.14-stretch-slim
 WORKDIR /opt/
 COPY package*.json /opt/
-RUN npm install
-RUN find . -name "*.d.ts" | xargs rm # Not needed in production.
-COPY  --from=builder /opt/build /opt/build
+RUN npm install --production
+COPY --from=builder /opt/build /opt/build
 # The flag lets us use imports without .js extensions, making the transition between
 # TS and JS easy.
 ENTRYPOINT ["node", "--es-module-specifier-resolution=node", "./build/_init.js"]
