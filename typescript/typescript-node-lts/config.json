@@ -2,5 +2,5 @@
 	"name":        "TS 4.5 & Node 1.16 LTS",
 	"description": "Runs functions with Typescript 4.5 and Node 1.16",
 	"targets": ["inngest"],
-	"postSetup": "## Next steps\n1. `cd` into your project\n2. Run `npm install` to install the base dependences\n3. Add your logic within src/index.ts"
+	"postSetup": "## Next steps\n1. `cd` into your project at `./{{ .dir }}`\n2. Run `npm install` to install the base dependences\n3. Add your logic within src/index.ts"
 }
