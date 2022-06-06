@@ -29,16 +29,16 @@ async function init() {
 }
 
 init()
-  .then(result => {
+  .then(body => {
     // TODO If this isn't an object, wrap this in a result object.
-    if (typeof result === "string") {
-      console.log(JSON.stringify({ result }));
+    if (typeof body === "string") {
+      console.log(JSON.stringify({ body }));
       return;
     }
-    console.log(JSON.stringify(result))
+    console.log(JSON.stringify(body))
   })
   .catch(e => {
     // TODO: Log error and stack trace.
-    console.log(JSON.stringify({ error: e }))
+    console.log(JSON.stringify({ error: e, status: 500 }))
     process.exit(1);
   });
