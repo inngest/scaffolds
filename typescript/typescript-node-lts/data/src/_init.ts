@@ -2,15 +2,11 @@ import type { EventTriggers } from "./types";
 import { run } from "./index";
 
 type Context = {
-  baggage: {
-    WorkspaceEvent: {
-      Event: EventTriggers;
-    },
-    Actions: {
-      [clientID: string]: any
-    }
-  }
-}
+  event: EventTriggers;
+  steps: {
+    [clientID: string]: any;
+  };
+};
 
 /**
  * Init initializes the context for running the function.  This calls
@@ -28,7 +24,7 @@ async function init() {
     throw new Error("unable to parse context");
   }
 
-  const result = await run({ event: context.baggage.WorkspaceEvent.Event, actions: context.baggage.Actions });
+  const result = await run(context);
   return result;
 }
 
