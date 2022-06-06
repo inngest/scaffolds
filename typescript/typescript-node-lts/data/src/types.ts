@@ -2,7 +2,7 @@
 
 export type Args = {
   event: EventTriggers;
-  actions: {
-    [clientID: string]: any
+  steps: {
+    [clientID: string]: any;
   };
 };

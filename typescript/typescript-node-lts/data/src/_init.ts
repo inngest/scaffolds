@@ -2,15 +2,11 @@ import type { EventTriggers } from "./types";
 import { run } from "./index";
 
 type Context = {
-  baggage: {
-    WorkspaceEvent: {
-      Event: EventTriggers;
-    },
-    Actions: {
-      [clientID: string]: any
-    }
-  }
-}
+  event: EventTriggers;
+  steps: {
+    [clientID: string]: any;
+  };
+};
 
 /**
  * Init initializes the context for running the function.  This calls
@@ -28,21 +24,21 @@ async function init() {
     throw new Error("unable to parse context");
   }
 
-  const result = await run({ event: context.baggage.WorkspaceEvent.Event, actions: context.baggage.Actions });
+  const result = await run(context);
   return result;
 }
 
 init()
-  .then(result => {
+  .then(body => {
     // TODO If this isn't an object, wrap this in a result object.
-    if (typeof result === "string") {
-      console.log(JSON.stringify({ result }));
+    if (typeof body === "string") {
+      console.log(JSON.stringify({ body }));
       return;
     }
-    console.log(JSON.stringify(result))
+    console.log(JSON.stringify(body))
   })
   .catch(e => {
     // TODO: Log error and stack trace.
-    console.log(JSON.stringify({ error: e }))
+    console.log(JSON.stringify({ error: e, status: 500 }))
     process.exit(1);
   });
