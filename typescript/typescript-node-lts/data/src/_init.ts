@@ -30,7 +30,6 @@ async function init() {
 
 init()
   .then(body => {
-    // TODO If this isn't an object, wrap this in a result object.
     if (typeof body === "string") {
       console.log(JSON.stringify({ body }));
       return;
