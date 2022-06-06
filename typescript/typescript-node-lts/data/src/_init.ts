@@ -1,19 +1,12 @@
-import type { EventTriggers } from "./types";
+import type { EventTriggers, Args } from "./types";
 import { run } from "./index";
-
-type Context = {
-  event: EventTriggers;
-  steps: {
-    [clientID: string]: any;
-  };
-};
 
 /**
  * Init initializes the context for running the function.  This calls
  * start() when
  */
 async function init() {
-  let context: Context | undefined;
+  let context: Args | undefined;
 
   // We pass the event in as an argument to the node function.  Running
   // npx ts-node "./foo.bar" means we have 2 arguments prior to the event.
