@@ -1,5 +1,5 @@
-module "{{ .QuotedName }}"
+module {{ .SlugName }}
 
 go 1.18
 
-require github.com/inngest/inngestgo v0.4.1
+require github.com/inngest/inngestgo v0.4.2
