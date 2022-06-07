@@ -1,0 +1,6 @@
+{
+	"name":        "Go 1.18",
+	"description": "Runs a Go 1.18 binary",
+	"targets": ["inngest"],
+	"postSetup": "## Next steps\n1. `cd` into your project at `./{{ .dir }}`\n2. Edit ./cmd/main.go with your logic\n3. Run `inngest run` to test your function."
+}
