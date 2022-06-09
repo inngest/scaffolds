@@ -11,10 +11,10 @@ Typescript and Node 16. It contains the following functionality:
 
 ## Getting started
 
-You can use this scaffold directly with the [Inngest CLI](https://github.com/inngest/inngestctl):
+You can use this scaffold directly with the [Inngest CLI](https://github.com/inngest/inngest-cli):
 
 ```
-inngestctl init
+inngest init
 ```
 
 Choose the "Typescript" language, and then select the "TS 4.5 & Node 16 LTS".
