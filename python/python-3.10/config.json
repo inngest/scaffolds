@@ -1,0 +1,6 @@
+{
+  "name": "Python 3.10",
+  "description": "Runs functions with Python 3.10",
+  "targets": ["inngest"],
+  "postSetup": "## Next steps\n1. `cd` into your project at `./{{ .dir }}`\n2. Add your logic within src/app.py\n3. Run `pip install <package>` to install any dependencies"
+}
