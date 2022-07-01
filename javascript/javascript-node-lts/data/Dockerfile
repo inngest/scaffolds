@@ -1,4 +1,4 @@
-FROM node:16.14-stretch-slim
+FROM node:16.15-stretch-slim
 WORKDIR /opt/
 COPY package*.json *lock src /opt/
 RUN npm install --production
