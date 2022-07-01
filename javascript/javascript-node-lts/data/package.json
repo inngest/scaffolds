@@ -1,5 +1,5 @@
 {
-  "name": "{{ .QuotedName }}",
+  "name": "{{ .SlugName }}",
   "version": "1.0.0",
   "description": "A serverless function triggered via events",
   "main": "src/_init.ts",
