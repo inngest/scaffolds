@@ -21,6 +21,11 @@ init()
     console.log(JSON.stringify(body));
   })
   .catch((e) => {
-    console.log(JSON.stringify({ error: e, status: 500 }));
+    console.log(
+      JSON.stringify({
+        error: e.stack || e.message,
+        status: 500,
+      })
+    );
     process.exit(1);
   });
