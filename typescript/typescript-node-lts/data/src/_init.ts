@@ -22,15 +22,20 @@ async function init() {
 }
 
 init()
-  .then(body => {
+  .then((body) => {
     if (typeof body === "string") {
       console.log(JSON.stringify({ body }));
       return;
     }
-    console.log(JSON.stringify(body))
+    console.log(JSON.stringify(body));
   })
-  .catch(e => {
+  .catch((e: Error) => {
     // TODO: Log error and stack trace.
-    console.log(JSON.stringify({ error: e, status: 500 }))
+    console.log(
+      JSON.stringify({
+        error: e.stack || e.message,
+        status: 500,
+      })
+    );
     process.exit(1);
   });
